@@ -1,5 +1,3 @@
-package com.addressbook;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -33,13 +31,14 @@ public class AddressBook implements AddressBookInfo {
     }
 
     /*Method to edit or update the details using firstname*/
+    @Override
     public void edit(String firstName) {
         for( int search = 0 ; search < book.size() ; search++ ) {
 
             if( book.get(search).getFirstName().equalsIgnoreCase(firstName)) {
                 Person person = book.get(search);
                 System.out.println("Hi  "+person.getFirstName()+" Please edit your details");
-                System.out.println("Hi Person "+person.getFirstName()+" Please edit your address");
+                System.out.println("Hi "+person.getFirstName()+" Please edit your address");
                 scan.next();
                 String address = scan.nextLine();
                 person.setAddress(address);
@@ -61,8 +60,22 @@ public class AddressBook implements AddressBookInfo {
         }
 
     }
+    /*Method to delete the details using firstname*/
+
+    @Override
+    public void delete(String firstName) {
+        for ( int select = 0; select < book.size(); select++) {
+            if(book.get(select).getFirstName().equalsIgnoreCase(firstName)) {
+                Person person = book.get(select);
+                book.remove(person);
+                System.out.println("Successfully Deleted!");
+            }
+        }
+
+    }
 
     //Display the person details added
+
     public void display() {
         for( Person person : book )
             System.out.println(person);
