@@ -1,3 +1,4 @@
+package com.addressbook;
 import java.util.Scanner;
 
 public class AddressBookMain {
@@ -10,17 +11,25 @@ public class AddressBookMain {
 
         /*To print options to perform
          *Choice to print add and display method
+         * Update or edit the details
          */
         while( status ) {
-            System.out.println("Hello Enter your option to perform actions: \n Press 1 to add new person" +
-                    " \n Press 2 to display details \n press 9 to quit");
+            System.out.println("Hello Enter your option to perform actions: \n Press 1 to add new person"+
+                    "\nPress 2 to update/edit details \nPress 3 to Display details \nPress 9 to quit ");
             int choice = scan.nextInt();
             switch (choice) {
-                case 1 : addressBook.add();
+                case 1 :
+                    addressBook.add();
                     break;
-                case 2 : addressBook.display();
+                case 2 :
+                    System.out.println("Hello Please enter your firstname  to update your details");
+                    String firstName = scan.next();
+                    addressBook.edit(firstName);
                     break;
-                default: status = false;
+                case 3 :
+                    addressBook.display();
+                default:
+                    status = false;
             }
         }
     }
