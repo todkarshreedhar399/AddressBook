@@ -7,9 +7,10 @@ public class AddressBook implements AddressBookInfo {
     ArrayList<Person> book = new ArrayList<>();
     //Creating scanner object
     Scanner scan = new Scanner(System.in);
+
     @Override
     public void add() {
-        //Reading the user input and print the details
+        //Reading the User input and print the details
         System.out.println("Enter the Person Firstname: ");
         String firstName = scan.nextLine();
         System.out.println("Enter the Person Lastname: ");

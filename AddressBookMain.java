@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class AddressBookMain {
     private void options(){
         boolean status = true;
-        //Declaring and initializing with predefined standard input object
+        //Declaring and Initializing with predefined standard input object
         Scanner scan = new Scanner(System.in);
         //Creating AddressBook object
         AddressBook addressBook = new AddressBook();
