@@ -1,5 +1,3 @@
-package com.addressbook;
-
 class Person {
 
     //Variables

@@ -10,11 +10,22 @@ public class AddressBook implements AddressBookInfo {
 
     @Override
     public void add() {
-        //Reading the User input and print the details
+        System.out.println("Enter the AddressBook Name");
+        scan.nextLine();
         System.out.println("Enter the Person Firstname: ");
         String firstName = scan.nextLine();
         System.out.println("Enter the Person Lastname: ");
         String lastName = scan.nextLine();
+
+        for( int search = 0; search < book.size(); search++ ) {
+            if(book.get(search).getFirstName().equalsIgnoreCase(firstName)) {
+                if(book.get(search).getLastName().equalsIgnoreCase(lastName)) {
+                    System.out.println("Sorry Name is already exist please update/edit your details with option 2");
+                    return;
+                }
+
+            }
+        }
         System.out.println("Enter the Person Address: ");
         String address = scan.nextLine();
         System.out.println("Enter the Person City: ");
