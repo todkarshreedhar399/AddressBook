@@ -6,7 +6,9 @@ public interface AddressBookInfo {
     public void sortAlphabetically(String firstName);
     public void searchPersonInState(String firstName);
     public void searchPersonInCity(String firstName);
-    void viewByCity(String city);
-    void viewByState(String state);
+    public void viewByCity(String city);
+    public void viewByState(String state);
+    public void countByCity(String city);
+    public void countByState(String state);
 
 }

@@ -16,7 +16,8 @@ public class AddressBookMain {
         while (status) {
             System.out.println("Hello Enter your option to perform actions: \n Press 1 to Add new person" +
                     "\n Press 2 to Update/edit details \n Press 3 to Display details \n Press 4 to Delete details " +
-                    " \n Press 5 to Sort the details according to person firstname \n Press 6 to Search on the basis of state or city \n Press 7 to View on the basis of state or city \nPress 9 to Quit");
+                    " \n Press 5 to Sort the details according to person firstname \n Press 6 to Search on the basis of state or city" +
+                    "\n Press 7 to View on the basis of state or city \n Press 8 to Count on the basis of state or city \nPress 9 to Quit");
             int choice = scan.nextInt();
             switch (choice) {
                 case 1:
@@ -55,7 +56,7 @@ public class AddressBookMain {
                         break;
                     }
                 case 7:
-                    System.out.println("press 1 for view by city and 2 for view by state");
+                    System.out.println("\nPress 1 for View by city \nPress 2 for view by state");
                     int optionToView = scan.nextInt();
                     if (optionToView == 1)
                     {
@@ -68,6 +69,22 @@ public class AddressBookMain {
                         System.out.println("Enter state name");
                         String state = scan.next();
                         addressBook.viewByState(state);
+                        break;
+                    }
+                case 8:
+                    System.out.println("\nPress 1 for Count by city \nPress 2 for Count by state");
+                    int optionToCount = scan.nextInt();
+                    if (optionToCount == 1)
+                    {
+                        System.out.println("Enter city name");
+                        String city = scan.next();
+                        addressBook.countByCity(city);
+                        break;
+                    }
+                    else {
+                        System.out.println("Enter state name");
+                        String state = scan.next();
+                        addressBook.countByState(state);
                         break;
                     }
                 default:
