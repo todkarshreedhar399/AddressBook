@@ -87,13 +87,7 @@ public class AddressBook implements AddressBookInfo {
 
     }
 
-    @Override
-    public void sortAlphabetically(String firstName) {
-        book.stream().sorted((p1, p2) -> p1.getFirstName().compareToIgnoreCase(p2.getFirstName())).forEach(System.out::println);
 
-        //Collections.sort(book, (p1, p2) -> p1.getFirstName().compareTo(p2.getFirstName()));
-        //System.out.println(book);
-    }
 
     public void searchPersonInCity(String firstName) {
         List<Person> people = book.stream().filter(person1 -> person1.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
@@ -142,6 +136,13 @@ public class AddressBook implements AddressBookInfo {
             System.out.println(person);
 
     }
+    @Override
+    public void sortAlphabetically(String firstName) {
+        book.stream().sorted((p1, p2) -> p1.getFirstName().compareToIgnoreCase(p2.getFirstName())).forEach(System.out::println);
+
+        //Collections.sort(book, (p1, p2) -> p1.getFirstName().compareTo(p2.getFirstName()));
+        //System.out.println(book);
+    }
 
         public void display() {
             for( Person person : book )
@@ -149,3 +150,4 @@ public class AddressBook implements AddressBookInfo {
         }
 
     }
+
