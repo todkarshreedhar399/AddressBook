@@ -1,5 +1,8 @@
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
+
 
 //AddressBook implements AddressBookInfo
 public class AddressBook implements AddressBookInfo {
@@ -85,9 +88,15 @@ public class AddressBook implements AddressBookInfo {
         }
 
     }
+    @Override
+    public void sortAlphabetically() {
+        book.stream().sorted((p1, p2)->p1.getFirstName().compareToIgnoreCase(p2.getFirstName())).forEach(System.out::println);
+
+        //Collections.sort(book, (p1, p2) -> p1.getFirstName().compareTo(p2.getFirstName()));
+        //System.out.println(book);
+    }
 
     //Display the person details added
-
     public void display() {
         for( Person person : book )
             System.out.println(person);

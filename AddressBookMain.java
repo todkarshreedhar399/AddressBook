@@ -16,7 +16,7 @@ public class AddressBookMain {
         while( status ) {
             System.out.println("Hello Enter your option to perform actions: \n Press 1 to Add new person"+
                     "\n Press 2 to Update/edit details \n Press 3 to Display details \n Press 4 to Delete details " +
-                    " \n Press 9 to quit ");
+                    " \n Press 5 to Sort the details according to person firstname \n Press 9 to quit" );
             int choice = scan.nextInt();
             switch (choice) {
                 case 1 :
@@ -34,6 +34,11 @@ public class AddressBookMain {
                     System.out.println("Hello Please enter your firstname to delete your details");
                     String firstname = scan.next();
                     addressBook.delete(firstname);
+                    break;
+                case 5 :
+                    System.out.println("Sorted Person details: ");
+
+                    addressBook.sortAlphabetically();
                     break;
                 default:
                     status = false;

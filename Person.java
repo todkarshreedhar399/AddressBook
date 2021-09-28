@@ -1,6 +1,6 @@
 class Person {
 
-    //Variables
+    //variables
     private String firstName;
     private String lastName;
     private String address;
