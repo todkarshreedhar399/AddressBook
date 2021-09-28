@@ -1,4 +1,4 @@
-class Person {
+lass Person {
 
     //variables
     private String firstName;
@@ -92,3 +92,5 @@ class Person {
                 '}';
     }
 }
+
+
