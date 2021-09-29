@@ -21,7 +21,7 @@ public class AddressBook implements AddressBookInfo {
         for (int search = 0; search < book.size(); search++) {
             if (book.get(search).getFirstName().equalsIgnoreCase(firstName)) {
                 if (book.get(search).getLastName().equalsIgnoreCase(lastName)) {
-                    System.out.println("Sorry Name is already exist please update/edit your details with option 2");
+                    System.out.println("Sorry Name already exists please update/edit your details with option 2");
                     return;
                 }
 
@@ -143,6 +143,22 @@ public class AddressBook implements AddressBookInfo {
         //Collections.sort(book, (p1, p2) -> p1.getFirstName().compareTo(p2.getFirstName()));
         //System.out.println(book);
     }
+    @Override
+    public void sortZip() {
+        book.stream()
+                .sorted((p1, p2)->p1.getZip().compareTo(p2.getZip()))
+                .forEach(System.out::println);
+    }
+
+    @Override
+    public void sortCity() {
+        book.stream().sorted((p1, p2)->p1.getCity().compareToIgnoreCase(p2.getCity())).forEach(System.out::println);
+    }
+
+    @Override
+    public void sortState() {
+        book.stream().sorted((p1, p2)->p1.getState().compareToIgnoreCase(p2.getState())).forEach(System.out::println);
+    }
 
         public void display() {
             for( Person person : book )
@@ -150,4 +166,3 @@ public class AddressBook implements AddressBookInfo {
         }
 
     }
-
